@@ -1,10 +1,7 @@
-// Инициализация EmailJS
+// Инициализация EmailJS (обязательно вставьте новый public key с префиксом public_)
 (function() {
-    const emailjsPublicKey = "KcMoRmKpH4vkVR1NR"; // Убедитесь, что это ваш текущий публичный ключ из EmailJS
-    console.log("EmailJS Public Key being used:", emailjsPublicKey);
     emailjs.init({
-        publicKey: emailjsPublicKey,
-        limitRate: true
+        publicKey: "oxFtwMgg9_c65K65Z", // ← ВСТАВЬТЕ СЮДА ВАШ НОВЫЙ PUBLIC KEY
     });
 })();
 
@@ -47,7 +44,7 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     };
 
     // Отправляем email
-    emailjs.send('service_jw65785', 'template_vkxop08', templateParams)
+    emailjs.send("service_vr1uoqu", "template_odg9b1k", templateParams)
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
             alert('Сообщение успешно отправлено!');
@@ -66,4 +63,4 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
             submitButton.disabled = false;
             submitButton.textContent = originalText;
         });
-}); 
+});
