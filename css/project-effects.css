@@ -1,0 +1,78 @@
+/* Эффекты для блока "Свяжитесь со мной" */
+.contact-animate {
+  opacity: 0;
+  transform: translateY(40px) scale(0.96);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.contact-animate.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.contact-animate:hover {
+  box-shadow: 0 8px 32px 0 rgba(14,165,233,0.18);
+  background: #232b36;
+  transform: scale(1.03) translateY(-4px);
+  border: 2px solid #38bdf8;
+  transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+}
+/* Яркая анимация появления и эффект наведения для project-card */
+@keyframes projectPopIn {
+  0% {
+    opacity: 0;
+    filter: blur(12px) brightness(1.5);
+    transform: scale(0.85) rotate(-6deg);
+    box-shadow: 0 0 0 0 rgba(14,165,233,0.0);
+  }
+  60% {
+    opacity: 1;
+    filter: blur(2px) brightness(1.1);
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 12px 32px 0 rgba(14,165,233,0.18);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0) brightness(1);
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0 4px 24px 0 rgba(14,165,233,0.10);
+  }
+}
+
+.project-card {
+  opacity: 0;
+  filter: blur(12px) brightness(1.5);
+  transform: scale(0.85) rotate(-6deg);
+  animation: projectPopIn 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transition: box-shadow 0.35s cubic-bezier(0.4,0,0.2,1),
+              transform 0.35s cubic-bezier(0.4,0,0.2,1),
+              filter 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+
+.project-card.visible {
+  opacity: 1;
+  filter: blur(0) brightness(1);
+  transform: scale(1) rotate(0deg);
+}
+
+/* Удалены эффекты наведения с фоном и рамкой */
+.project-card:hover {
+  /* только масштаб и плавность */
+  transform: scale(1.04) translateY(-4px);
+  transition: transform 0.22s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* Анимация вращения для иконки внутри карточки */
+@keyframes iconSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.project-card:hover .fa-laptop-code,
+.project-card:hover .fa-mobile-alt,
+.project-card:hover .fa-shopping-cart,
+.project-card:hover .fa-chart-line,
+.project-card:hover .fa-robot,
+.project-card:hover .fa-pencil-alt {
+  animation: iconSpin 0.8s linear infinite;
+}

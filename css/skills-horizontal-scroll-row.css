@@ -1,0 +1,89 @@
+.exp-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.exp-card-footer {
+  margin-top: auto;
+}
+.exp-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s, transform 0.7s;
+}
+.exp-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.exp-card:hover {
+  box-shadow: 0 12px 32px 0 rgba(0,0,0,0.18), 0 2px 8px 0 rgba(0,0,0,0.10);
+  transform: scale(1.025) translateY(-4px);
+  z-index: 2;
+}
+.exp-card .fa-bug {
+  transition: transform 0.4s;
+}
+.exp-card:hover .fa-bug {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+.experience-animate .exp-card {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+.experience-animate.visible .exp-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.experience-animate.visible .exp-card {
+  transition-delay: 0s;
+}
+.experience-animate.visible .exp-card:nth-child(1) { transition-delay: 0.08s; }
+.experience-animate.visible .exp-card:nth-child(2) { transition-delay: 0.18s; }
+.experience-animate.visible .exp-card:nth-child(3) { transition-delay: 0.28s; }
+.experience-animate.visible .exp-card:nth-child(4) { transition-delay: 0.38s; }
+.experience-animate.visible .exp-card:nth-child(5) { transition-delay: 0.48s; }
+.experience-animate.visible .exp-card:nth-child(6) { transition-delay: 0.58s; }
+
+@keyframes float-avatar {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+  100% { transform: translateY(0); }
+}
+.about-avatar-float {
+  animation: float-avatar 3.5s ease-in-out infinite;
+}
+.about-animate {
+  opacity: 0;
+  transform: scale(0.98) translateY(40px);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+.about-animate.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.about-animate {
+  opacity: 0;
+  transform: scale(0.98) translateY(40px);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+.about-animate.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.10);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.3s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s;
+}
+.glass-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 16px 40px 0 rgba(31, 38, 135, 0.30);
+}
